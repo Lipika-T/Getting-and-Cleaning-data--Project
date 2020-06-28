@@ -20,8 +20,8 @@ m.std.data=combine[c(1,2,grep("mean\\(\\)|std\\(\\)",names(combine)))]
 m.std.data$Activity=sapply(m.std.data$Activity,function(x) sub(x,labels[[x]],x))
 write.table(m.std.data,"tidy_dataset.txt",sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
 
-by_sub=aggregate(m.std.data[,3:68],list(m.std.data[,1]),mean)
-by_activity=aggregate(m.std.data[,3:68],list(m.std.data[,2]),mean)
-grouped_means=rbind(by_sub,by_activity)
-names(grouped_means)[1]="Group (Subject/Activity)"
-write.table(grouped_means,"Subject_Activity_Average.txt",sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
+by_sub=aggregate(m.std.data[,3:68],list(m.std.data$Subject),mean)
+by_activity=aggregate(m.std.data[,3:68],list(m.std.data$Activity),mean)
+grouped_avg=rbind(by_sub,by_activity)
+names(grouped_avg)[1]="Group (Subject/Activity)"
+write.table(grouped_avg,"Subject_Activity_Average.txt",sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
