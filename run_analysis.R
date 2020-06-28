@@ -22,6 +22,6 @@ write.table(m.std.data,"tidy_dataset.txt",sep="\t",row.names=FALSE,col.names=TRU
 
 by_sub=aggregate(m.std.data[,3:68],list(m.std.data$Subject),mean)
 by_activity=aggregate(m.std.data[,3:68],list(m.std.data$Activity),mean)
-grouped_avg=rbind(by_sub,by_activity)
+grouped_avg=rbind(by_sub,by_activity) 
 names(grouped_avg)[1]="Group (Subject/Activity)"
 write.table(grouped_avg,"Subject_Activity_Average.txt",sep="\t",row.names=FALSE,col.names=TRUE,quote=FALSE)
