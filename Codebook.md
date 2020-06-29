@@ -3,7 +3,7 @@ title: ''
 output: html_document
 ---
 
-# R Markdown
+# Codebook
 The file "Subject_Activity_Average.txt" contains a table with 36 rows and 67 columns. Following is the list of of columns/fields. Each row represents an pbservation - either the subject or activity for which the remaining variables are averaged.
 
 **1. Group (Subject/Activity)** - The variable by which the data is grouped and averaged for. It consists of 36 groups :
